@@ -36,9 +36,7 @@ class ViewController: UIViewController {
         imageView.widthAnchor.constraint(equalToConstant: 80).isActive = true
         return imageView
     }()
-    
-    //let parrentView = UIImageView(image: UIImage(named: "warren"))
-    
+
     let stackView   = UIStackView()
 
     var childView = UIView();
@@ -51,23 +49,25 @@ class ViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-       
+        addCrossHair()
+    }
+    
+    fileprivate func addCrossHair() {
         let width = parrentView.frame.width * 0.55
         let height = parrentView.frame.height * 0.5
-
+        
         let frame = CGRect(x: 0, y: 0, width: width, height: height)
         childView = DrawView(frame: frame)
         childView.backgroundColor = UIColor.clear
         childView.translatesAutoresizingMaskIntoConstraints = false
         parrentView.addSubview(childView)
         childView.center = CGPoint(x: parrentView.frame.size.width  / 2,
-                                     y: parrentView.frame.size.height / 2)
+                                   y: parrentView.frame.size.height / 2)
     }
     
     func style() {
         parrentView.translatesAutoresizingMaskIntoConstraints = false
         parrentView.contentMode = .scaleAspectFit
-        
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis  = NSLayoutConstraint.Axis.vertical
         stackView.spacing   = 43.0
@@ -89,8 +89,6 @@ class ViewController: UIViewController {
             stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1),
             stackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            
-            
         ])
     }
 
