@@ -9,13 +9,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
-//    let parrentView: UIImageView = {
-//       let imageView = UIImageView(image: UIImage(named: "warren"))
-//        imageView.translatesAutoresizingMaskIntoConstraints = false
-//        imageView.contentMode = .scaleAspectFit
-//        return imageView
-//    }()
-//
+    let parrentView: UIImageView = {
+       let imageView = UIImageView(image: UIImage(named: "warren"))
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+
     let instructText: UITextView = {
         let textView = UITextView()
         textView.text = " TURN HEAD LEFT"
@@ -37,12 +37,10 @@ class ViewController: UIViewController {
         return imageView
     }()
     
-    let parrentView = UIImageView(image: UIImage(named: "warren"))
+    //let parrentView = UIImageView(image: UIImage(named: "warren"))
     
     let stackView   = UIStackView()
-        
-    //var squareImage = UIImage()
-    
+
     var childView = UIView();
     
     override func viewDidLoad() {
